@@ -16,7 +16,7 @@ Click the green `Create workspace` button at the bottom.
 
 
 
-### Step 2: Setting up the HTML File 
+### Step II: Setting up the HTML File 
 
 Start by creating an HTML file. Rick click the `PersonalWebsite` folder on the left sidebar and select `New File`.
 Name the file `index.html`. Now double click on the file and it should open up.
