@@ -1,7 +1,7 @@
 # Cringe Off.
 
 
-### Step 1: Setting up the files
+### Step I: Setting up the files
 Create a folder for this project. I'll be calling my folder cringe_off.
 
 To start, create two files in your folder: ```index.html``` ```styles.css```
