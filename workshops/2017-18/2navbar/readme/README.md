@@ -17,7 +17,7 @@ Now, we will create the shell of the webpage. Start with the ```<html>``` tag. I
 </html>
 ```
 
-### Step 2: Creating the navbar
+### Step 2: Making the navbar
 
 In the body, create a ```<nav>``` tag. Inside the tag, create an ```<a>``` tag. Inside the tag, type ```Home```. Create two more ```<a>``` tags, for Page 1 and Page 2. 
 
