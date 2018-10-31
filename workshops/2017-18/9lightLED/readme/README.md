@@ -47,7 +47,7 @@ An example circuit is shown below:
 
 <img src="../photos/photoFIN.PNG">
 
-## Part II: Coding
+## Part 2: Coding
 
 Now comes the fun part: coding! A number of different things must happen for this project to work.
 
