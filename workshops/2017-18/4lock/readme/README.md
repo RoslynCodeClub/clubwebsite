@@ -118,7 +118,7 @@ The `.switch input` is basically saying all `<input>` tags that exists inside of
 
 #### Styling the Part That Slides
 
-Now, we will be styling the part that will actually be moving: the `<span>` tag.
+From now on, we will be styling the part that will actually be moving: the `<span>` tag.
 
 First, type `.slider {`. Inside, put `position: absolute;`, `top: 0;`, `left: 0;`, `right: 0;`, and `bottom:0` to position the slider properly.
 
