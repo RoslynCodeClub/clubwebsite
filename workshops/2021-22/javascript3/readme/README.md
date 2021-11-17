@@ -158,7 +158,79 @@ input{
 }
 ```
 
-### Challenge
+### Update 11/17/21
 
-See if you can generate the output for a user's results on your personality quiz!
+Add this to the style.css file!
 
+```html
+label{
+  width:200px;
+  display: inline-block;
+  background-color: gray;
+}
+```
+
+Add these changes to the nextQuestion function!
+
+```html
+function nextQuestion(){
+  for (letter in questions[number].answers) {
+    var button = document.getElementById('' + number + letter);
+    if (button.checked == true) {
+      personalityScore += questions[number].values[letter];
+    }
+
+  }
+  number++;
+  if(number >= questions.length){
+    showResults();
+    return;
+  }
+  questionManager();
+}
+```
+
+These are the following changes to be made to the displayQuestion function.
+
+```html
+function displayQuestion(number) {
+  var question = questions[number].question;
+  var answers = []
+  for (answer in questions[number].answers) {
+    answers.push(
+      '<label>'
+     + questions[number].answers[answer] + '<input type="radio" id="' + number + answer + '" value="' + questions[number].answers[answer] + '">'
+      + '</label>'
+    );
+  }
+  var answersDisplay = answers[0] + "&nbsp" + answers[1] + "<br><br>" + answers[2] + "&nbsp" + answers[3];
+  var output =
+    '<div class="question">' + question + '</div><br><br>'
+    + '<div class="answers">' + answersDisplay + '</div>';
+
+  quizContainer.innerHTML = output;
+}
+```
+
+On the showResults function, add the following changes!
+
+```html
+function showResults(){
+  setTimeout(() => { quizContainer.innerHTML = "Generating results..."; }, 2000);
+  if (personalityScore <= 2){
+    console.log("You're a Gryffindor!")
+  }
+  else if (personalityScore > 2 && personalityScore < 5){
+    console.log("You're a Hufflepuff!")
+  }
+  else if (personalityScore > 4 && personalityScore < 7){
+    console.log("You're a Ravenclaw!")
+  }
+  else if (personalityScore > 6 && personalityScore < 9){
+    console.log("You're a Slytherin!")
+  }
+}
+```
+
+### Challenge 
+Add more graphics and create whatever questions you may choose!
