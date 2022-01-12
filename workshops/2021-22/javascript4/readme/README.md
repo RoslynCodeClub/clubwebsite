@@ -48,7 +48,7 @@ function setup(){
 The last line is obviously the most important, as it offically starts your voice channel.
 
 ### Step 4: Code the `parseResult`
-In the 1st line of Step 2, there is a `parseResult` in the `SppechRec()` function.
+In the 1st line of Step 2, there is a `parseResult` in the `SpeechRec()` function.
 This is the function that is ran when the voice channel detects words being spoken, so it is where we will be coding what we want to happen after our oral message is received.
 
 First, check that something has been received with 
