@@ -35,7 +35,11 @@ The channel (line 1) will now listen continuously (line 2) as you speak, waiting
 ### Step 3: Set Up the `setup()`
 
 p5 not only has a console, but a stage where shapes, objects, and images can be displayed.
-To set that up, for code the `setup()` function. In p5, and in other languages such as Processing, `setup()` is automatically called ONCE at the start when a program is ran.
+
+To create that stage, let's code the `setup()` function. 
+In p5, and in other languages such as Processing, `setup()` is automatically called ONCE at the start when a program is ran.
+*There is also a `draw()` function that runs 60 times a second continually, which you can use for animation and live updates to your stage.*
+
 ```javascript
 function setup(){
   createCanvas(windowWidth,windowHeight);
@@ -45,9 +49,10 @@ function setup(){
   speech.start();
 }
 ```
-The last line is obviously the most important, as it offically starts your voice channel.
+The last line is the most important, as it offically starts your voice channel.
 
 ### Step 4: Code the `parseResult`
+
 In the 1st line of Step 2, there is a `parseResult` in the `SpeechRec()` function.
 This is the function that is ran when the voice channel detects words being spoken, so it is where we will be coding what we want to happen after our oral message is received.
 
@@ -86,6 +91,7 @@ Try it out now, and see if it works!
 If for some reason it doesn't, click on the "Open Up in a New Tab" button on the top right. It should then open a new tab, ask you for permission to use the microphone, and then it will work. 
 
 ## Example Projects
+
 The possibilites of incorporating voice recognition into a project are endless! Check out these projects that @dliu22 made!
 - [Birthday Card](https://birthdaycard.dliu22.repl.co/) - this project is made for a certain teacher whose birthday may be the 24th of January... To unlock it, you have to say a special message. 
     <details>
@@ -95,6 +101,7 @@ The possibilites of incorporating voice recognition into a project are endless! 
 - [Voice Recognition Pokédex](https://voicepokedex.dliu22.repl.co/) - a JS implementation of a Pokedex from Pokemon. It combines using voice recognition and a web API to give information about Pokemon. It might not work immediately, as it needs to connect with the API, but after waiting a few seconds it should work.
 
 ## Challenges/Ideas
+
 I reccomend exploring the p5 library, including p5.speech, and see what else is possible (a lot!)
 - Implement your own secret voice message to unlock your website
 - Make a game that uses voice recognition as player commands
