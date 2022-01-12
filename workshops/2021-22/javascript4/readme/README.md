@@ -1,16 +1,21 @@
 
-# Workshop 1: Personal Website
+# Workshop 5: Voice Recognition
 
-This workshop is for people with no prior knowledge of coding. We will cover the basics of HTML and create a personal website. 
+Today, we will learn how to implement voice recognition in JavaScript using the library p5.js! This has a wide variety of applications and can be included in many projects. 
 
-### Step 1: Setting up Repl
+### Step 1: Setting Up The Coder
 
-Before we start coding, we have to first set up a text editor. We recommend using repl.it as it has an intuitive interface and allows you to work together with others.
+First, log onto your repl.it account and create a new HTML/JS/CSS repl. This should give you a base project with a basic `index.html`. 
+In the `<head>`, copy the following lines of code in.
+```html
+<script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/IDMNYU/p5.js-speech@0.0.3/lib/p5.speech.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/addons/p5.sound.js"></script>
+```
+This will import the necessary libraries we need for this project: p5 and p5.speech. 
+p5.sound (the last one) is optional. Only include it if you are going to play sound/audio files in your project. 
 
-1. Go to repl.it and create a new account. 
-2. After your account is created, go to the “My repls” tab located on the left hand side of the page.
-3. Click the + sign on the upper right corner and select HTML, CSS, JS as your template.
-4. Name your repl and click Create Repl. You are now ready to begin coding! 
+Make sure your `index.html` file is linked to your `script.js` file, and then we're ready to begin!
 
 ### Step 2: Setting up the HTML File 
 
