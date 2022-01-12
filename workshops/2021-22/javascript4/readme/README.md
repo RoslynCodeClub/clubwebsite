@@ -85,7 +85,7 @@ Try it out now, and see if it works!
 
 If for some reason it doesn't, click on the "Open Up in a New Tab" button on the top right. It should then open a new tab, ask you for permission to use the microphone, and then it will work. 
 
-### Example Projects
+## Example Projects
 The possibilites of incorporating voice recognition into a project are endless! Check out these projects that @dliu22 made!
 - [Birthday Card](https://birthdaycard.dliu22.repl.co/) - this project is made for a certain teacher whose birthday may be the 24th of January... To unlock it, you have to say a special message. 
 <details>
@@ -94,7 +94,7 @@ The possibilites of incorporating voice recognition into a project are endless! 
 </details>
 - [Voice-Recognition Pokédex](https://voicepokedex.dliu22.repl.co/) - a JS implementation of a Pokedex from Pokemon. It combines using voice recognition and a web API to give information about Pokemon. It might not work immediately, as it needs to connect with the API, but after waiting a few seconds it should work.
 
-### Challenges/Ideas
+## Challenges/Ideas
 I reccomend exploring the p5 library, including p5.speech, and see what else is possible (a lot!)
 - Implement your own secret voice message to unlock your website
 - Make a game that uses voice recognition as player commands
