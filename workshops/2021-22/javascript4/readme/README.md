@@ -3,6 +3,8 @@
 
 Today, we will learn how to implement voice recognition in JavaScript using the library p5.js! This has a wide variety of applications and can be included in many projects. 
 
+*Note: Make sure whatever device you are coding on has a mic - this must be coded on a computer!*
+
 ### Step 1: Setting Up The Coder
 
 First, log onto your repl.it account and create a new HTML/JS/CSS repl. This should give you a base project with a basic `index.html`. 
@@ -17,151 +19,84 @@ p5.sound (the last one) is optional. Only include it if you are going to play so
 
 Make sure your `index.html` file is linked to your `script.js` file, and then we're ready to begin!
 
-### Step 2: Setting up the HTML File 
+### Step 2: Setting Up Voice Recognition
 
-After creating the repl, you should see the following on your page:
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-    </head>
-    <body>
-    </body>
-</html>
+Go to your `script.js` file, where you will be doing all of the coding in.
+At the top of the file, start the voice channel that will listen to and detect what you say.
+```javascript
+const speech = new p5.SpeechRec('en-US', parseResult);
+speech.continuous = true;
+speech.interimResults = false;
 ```
-This is the backbone of the HTML file that will contain the rest of the code. 
+The channel (line 1) will now listen continuously (line 2) as you speak, waiting until you pause (line 3) to upload its results to the program.
 
-Make sure to save as you go along by clicking `file` and `save` or use the shortcut <kbd>Ctrl+s</kbd>. 
+*This will only work on a computer! Mobile browsers are not supported by this library.*
 
-You can preview the page by clicking `Preview` on the top bar and then selecting `Live Preview File`.
+### Step 3: Set Up the `setup()`
 
-#### Side Notes:
-Repl automatically saves your code so you don’t have to worry about losing your work.
+p5 not only has a console, but a stage where shapes, objects, and images can be displayed.
+To set that up, for code the `setup()` function. In p5, and in other languages such as Processing, `setup()` is automatically called ONCE at the start when a program is ran.
+```javascript
+function setup(){
+  createCanvas(windowWidth,windowHeight);
+  background("white"); // you can choose any color you want! RGB, HSB, hexcode, and color name all work
+  fill(25); // text + object color
 
-You can press the Run tab at the top of your screen at any point to test run the code that you have.
-
-### Step 3: Adding Text
-
-We can now begin to add text to your website. HTML has numerous different formats for text, accessed through the use of different elements. 
-
-Heading elements are used to create headers and are denoted by: `<h1>`, `<h2>`, `<h3>` … `<h6>`
-
-There is also a paragraph element, which is used to create paragraph text. It is accessed through `<p>` 
-
-Text must be written in between a starting tag (ex: `<h1>`) and an ending tag (ex: `</h1>` in order to be displayed on your page. 
-
-Try to add some text to your page! An example is shown below. 
-
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-    </head>
-    <body>
-        <p>This is a paragraph about my website!</p> <!--paragraph-->
-        <h2>Favorite Foods</h2> <!--Heading 2-->
-        <p>This is a paragraph about my favorite foods!</p> <!--paragraph-->
-        <h2>Favorite Color</h2> <!--Heading 2-->
-        <p>This is a paragraph about my favorite color!</p> <!--paragraph-->
-    </body>
-</html>
+  speech.start();
+}
 ```
+The last line is obviously the most important, as it offically starts your voice channel.
+
+### Step 4: Code the `parseResult`
+In the 1st line of Step 2, there is a `parseResult` in the `SppechRec()` function.
+This is the function that is ran when the voice channel detects words being spoken, so it is where we will be coding what we want to happen after our oral message is received.
+
+First, check that something has been received with 
+```javascript
+function parseResult(){
+  if(speech.resultValue){
   
-### Step 4: Formats
-
-Although there are several ways you can stylize your text directly through HTML with the use of tags, it is still rather limited. 
-
-We will go over how to further expand your options with the use of CSS in future workshops.
-  
-`<b>` - Bold text <br>
-`<strong>` - Important text <br>
-`<em>` - Emphasized text <br>
-
-* although these first 3 have the same default display, they have different semantics on a page 
-
-`<i>` - Italic text <br>
-`<mark>` - Marked/highlighted text <br>
-`<small>` - Smaller text <br>
-`<sub>` - Subscript text <br>
-`<sup>` - Superscript text <br>
-`<del>` - Deleted text <br>
-`<ins>` - Inserted text <br>
-
-### Step 5: Lists
-
-Lists are another element that can be used to format text in HTML.
-  
-Unordered lists are used to display items as bullet points. 
-The unordered list tag is `<ul>` and each list item is then prefaced with the tag `<li>`
-
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-    </head>
-    <body>
-        <!-- Unordered List-->
-        <ul>
-          <li>Red</li>
-          <li>Orange</li>
-          <li>Yellow</li>
-          <li>Green</li>
-        </ul>
-    </body>
-</html>
+  }
+}
 ```
+If the value received is nothing, then the if statement will be false and nothing will happen.
 
-Ordered lists are used to display items in a numbered list. 
-The ordered list tag is `<ol>` and like the unordered list, each list item must have the tag `<li>` before it.
+Then inside the if statement, write what you want to happen. For this example, the background of the screen will change to whatever color the user speaks.
 
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-    </head>
-    <body>
-        <!--Ordered List-->
-        <ol>
-          <li>Science</li>
-          <li>Math</li>
-          <li>English</li>
-          <li>Social Studies</li>
-        </ol>
-    </body>
-</html>
+First, it takes the resulting message and splits it by spaces into an array of words (`split(' ')`).
+Then, it takes the last word (`pop()`), turns it into uppercase, and changes the background to that color.
+It also displays the color as text on the screen using the `text()` function.
+*In general, the function is `text("message here", x, y)` - here, x and y are width/2 and height/2 respectively, meaning the center of the screen.*
+
+```javascript
+function parseResult(){
+  if(speech.resultValue){
+    const color = speech.resultString
+      .split(' ')
+      .pop()
+      .toUpperCase();
+    background(color);
+    text(color, width/2, height/2);
+    console.log(color);
+  }
+}
 ```
+Try it out now, and see if it works!
 
-### Step 6: Pictures
+If for some reason it doesn't, click on the "Open Up in a New Tab" button on the top right. It should then open a new tab, ask you for permission to use the microphone, and then it will work. 
 
-Images and GIFs are added in HTML with the <img> tag
+### Example Projects
+The possibilites of incorporating voice recognition into a project are endless! Check out these projects that @dliu22 made!
+- [Birthday Card](https://birthdaycard.dliu22.repl.co/) - this project is made for a certain teacher whose birthday may be the 24th of January... To unlock it, you have to say a special message. 
+<details>
+    <summary>The Secret Message</summary>
+    Happy Birthday Mr. C!
+</details>
+- [Voice-Recognition Pokédex](https://voicepokedex.dliu22.repl.co/) - a JS implementation of a Pokedex from Pokemon. It combines using voice recognition and a web API to give information about Pokemon. It might not work immediately, as it needs to connect with the API, but after waiting a few seconds it should work.
 
-It is formatted as `<img src = “...” alt = “...” style = “...”>` 
-
-The src attribute is the source of the image, which can be either a URL or a file path of the image. 
-
-The alt attribute is the alternative for if the image is not able to be displayed. 
-It is usually set as what the image is supposed to be. 
-
-The style attribute modifies the shape of the image using `width:` and `height:`, as well as its position on the screen with `float:`.
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-    </head>
-    <body>
-      <img src="baby.gif" alt="Photo of Infant" style="float:right;width:50px;height:50px;">
-    </body>
-</html>
-```
-
-### Step 7: Put it all together!
-
-Now it's time to combine all of these steps and create a personal website on your own!
-
-### Challenge
-
-Try to add a navigation bar to your website! You can use the internet or other resources as a guide.
+### Challenges/Ideas
+I reccomend exploring the p5 library, including p5.speech, and see what else is possible (a lot!)
+- Implement your own secret voice message to unlock your website
+- Make a game that uses voice recognition as player commands
+- Voice-recognition calculator
+- Anything else you can think of!
