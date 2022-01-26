@@ -93,12 +93,12 @@ If for some reason it doesn't, click on the "Open Up in a New Tab" button on the
 ## Example Projects
 
 The possibilites of incorporating voice recognition into a project are endless! Check out these projects that @dliu22 made!
-- [Birthday Card](https://birthdaycard.dliu22.repl.co/) - this project is made for a certain teacher whose birthday may be the 24th of January... To unlock it, you have to say a special message. 
+- [Birthday Card](https://replit.com/@dliu22/BirthdayCard#script.js) - this project is made for a certain teacher whose birthday may be the 24th of January... To unlock it, you have to say a special message. 
     <details>
         <summary>The Secret Message</summary>
         Happy Birthday Mr. C!
     </details>
-- [Voice Recognition Pokédex](https://voicepokedex.dliu22.repl.co/) - a JS implementation of a Pokedex from Pokemon. It combines using voice recognition and a web API to give information about Pokemon. It might not work immediately, as it needs to connect with the API, but after waiting a few seconds it should work.
+- [Voice Recognition Pokédex](https://replit.com/@dliu22/VoicePokedex#script.js) - a JS implementation of a Pokedex from Pokemon. It combines using voice recognition and a web API to give information about Pokemon. It might not work immediately, as it needs to connect with the API, but after waiting a few seconds it should work.
 
 ## Challenges/Ideas
 
