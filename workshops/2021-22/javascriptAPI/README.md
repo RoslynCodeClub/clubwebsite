@@ -13,7 +13,7 @@ For APIs, we call these "POST" and "GET" requests.
 Most commonly, they are used to get large amounts of data from databases, such as weather, geographical, market information.
 For things that change often, like the weather, it's important to get ACCURATE, LIVE data. But you don't want to have to get a meterology degree and learn how to interpret weather trends and create your own software for processing all of that data. So, use an API that someone else has already programmed! For example, check out [FreeWeatherAPI](https://www.weatherapi.com/), whose service is entirely dedicated to transmitting real-time data about the weather in specific locations.
 
-There are APIs for almost everything! Take a look at [APIList](https://apilist.fun/), and see if there's any that interest you, whether it's for getting images of cats or for discovering new animes.
+There are APIs for almost everything! Take a look at [APIList](https://apilist.fun/), and see if there's any that interest you, whether it's for getting images of cats or for discovering new animes. The possibilities are truly endless, now that we have access to services/data on the internet that we did not have before.
 
 For this workshop, we are going to making a Pokedex using [PokeAPI](https://pokeapi.co/). Follow the workshop, and then try and apply the general API concepts taught here for other APIs of your choosing.
 
@@ -175,4 +175,7 @@ function loadImg(img){
 ```
 
 ### Ending Notes
-Let us know if you have any questions, and once you're finished making your personal Pokedex, try your hand at using another API and incorporating it into another project (or the same one if you're daring!).
+Let us know if you have any questions, and once you're finished making your personal Pokedex, try your hand at using another API and incorporating it into another project.
+There are still a few concepts we haven't learned, such as API keys and multiple queries, but that will be covered later. (If you are curious now, ask us!)
+
+Have fun coding!
