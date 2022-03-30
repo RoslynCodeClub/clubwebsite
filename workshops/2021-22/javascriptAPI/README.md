@@ -60,6 +60,7 @@ Make sure to add ```ask()``` to the ```setup()``` function so that it's called w
 ### Step 3: Sending the Request
 Now let's code ```getResult()```. This is where we want to make our web request to the PokeAPI server and request information.
 First, create the request, then open it by and specify that is a GET request (we want to GET info). We are also using the API url given by the PokeAPI website. 
+
 *For each API you use, MAKE SURE to read through its documentation. Each API works differently, has different links and queries you can use as an input to the API, so it is imperative that you read through the documentation and understand how that specific API link works. Look at PokeAPI's [docs](https://pokeapi.co/docs/v2), and make sure you understand it before moving on.*
 
 Its responseType is what type of format the information will be returned in, most commonly JSON or XML. Check your API to see what specific type it returns. 
@@ -123,6 +124,7 @@ Ex: Looking at the Pikachu link from before, let's try to get the first ability 
 - And there you go! You can ```console.log()``` it, display it on the screen using the p5 ```text()``` function, or whatever you want. 
 
 Below, I included my code for taking in all of the data I wanted, which included images. I also created a ```display()``` function for displaying all of the different components, which might be helpful to include to keep it separate from the retrieval code.
+
 ***TIP: Start from the outermost layer, ```data```, and slowly work in one layer at a time until you get to the information you want. For example, to get the names of the common moves, I did ```data.moves[i].move.name```, going one layer deeper each time until I reached the moves. REMEMBER, the point is to make your code as general as possible, so it will work no matter what Pokemon the user puts in. The helpful thing is, APIs always return the information in the same format and order (in terms of keys), so use that to your advantage. The only thing that changes is the actual value of each key.***
 ```javascript
 request.onload = function(){
